@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Simple API Frontend</title>
+  <title>My Vercel API</title>
 </head>
 <body>
-  <h1>Halo Dunia!</h1>
-  <p>Ini frontend-nya</p>
-  <div id="output"></div>
+  <h1>Selamat datang di API buatan sendiri 🎉</h1>
+  <button onclick="loadAPI()">Ambil Data API</button>
+  <pre id="output"></pre>
 
   <script>
-    fetch('/api/')
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('output').innerText = JSON.stringify(data);
-      });
+    async function loadAPI() {
+      const res = await fetch('/api');
+      const data = await res.json();
+      document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+    }
   </script>
 </body>
 </html>

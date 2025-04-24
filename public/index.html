@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Simple API Frontend</title>
+</head>
+<body>
+  <h1>Halo Dunia!</h1>
+  <p>Ini frontend-nya</p>
+  <div id="output"></div>
+
+  <script>
+    fetch('/api/')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('output').innerText = JSON.stringify(data);
+      });
+  </script>
+</body>
+</html>
